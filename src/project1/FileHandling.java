@@ -19,7 +19,7 @@ public class FileHandling {
 		while(true) {
 			System.out.println("press 1 to retrieve all files from main folder and display in ascending order");
 			System.out.println("press 2 to display secondary menu for performing file operations and and take user input");
-			System.out.println("press 3 to display program terminated successfully");
+			System.out.println("press 3 to program terminated successfully");
 			
 			
 			
@@ -36,10 +36,10 @@ public class FileHandling {
 				break;
 				
 			case 2:
-				System.out.println("press 1 for --------");
-				System.out.println("press 2 for --------");
-				System.out.println("press 3 for --------");
-				System.out.println("press 4 for --------");
+				System.out.println("press 1 to add file/folder to \"main\" folder");
+				System.out.println("press 2 to delete a file/folder");
+				System.out.println("press 3 to show file that starts with");
+				System.out.println("press 4 to return to previous menu");
 				
 				int menu = scan.nextInt();
 				
