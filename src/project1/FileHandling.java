@@ -21,8 +21,6 @@ public class FileHandling {
 			System.out.println("press 2 to display secondary menu for performing file operations and and take user input");
 			System.out.println("press 3 to program terminated successfully");
 			
-			
-			
 			int choice = scan.nextInt();
 			
 			switch(choice) {
@@ -45,6 +43,18 @@ public class FileHandling {
 				
 				switch(menu) {
 				case 1:
+					
+					System.out.println("press 1 to add folder to \"main\" folder");
+					System.out.println("press 2 to add file to \"main\" folder");
+					int menu2 = scan.nextInt();
+					switch(menu2) {
+					case 1:
+						
+						System.out.println("Enter folder name to be created inside \"main\" folder");
+						break;
+					case 2:
+						break;
+					}
 					break;
 				case 2:
 					break;
