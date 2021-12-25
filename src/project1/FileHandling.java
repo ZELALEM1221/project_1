@@ -1,6 +1,7 @@
 package project1;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FileHandling {
@@ -26,9 +27,22 @@ public class FileHandling {
 			switch(choice) {
 			case 1:
 				
-				File[] arrayOfFiles = folder.listFiles();
-				for(int i = 0; i< arrayOfFiles.length; i++) {
-					System.out.println(arrayOfFiles[i].getName());
+				File dir = new File("./main");
+
+				File[] files = dir.listFiles();
+				if (files != null && files.length > 0) {
+					for (File file:files) {
+						
+						if (file.isDirectory()) {
+		                    
+		                    System.out.println(file.getAbsolutePath());
+		                } else {
+		                    
+		                    System.out.println(file.getName() + " (size in bytes: " + file.length()+")");
+		                }
+						
+						
+					}
 				}
 				
 				break;
@@ -50,9 +64,41 @@ public class FileHandling {
 					switch(menu2) {
 					case 1:
 						
-						System.out.println("Enter folder name to be created inside \"main\" folder");
+					      Scanner sc = new Scanner(System.in);
+					      String path = "./main/";
+					      System.out.println("Enter the name of the desired directory: ");
+					      path = path+sc.next();
+					      //Creating a File object
+					      File file = new File(path);
+					      //Creating the directory
+					      boolean bool = file.mkdir();
+					      if(bool){
+					         System.out.println("Directory created successfully");
+					      }else{
+					         System.out.println("Sorry couldn’t create specified directory");
+					      }
+						
 						break;
 					case 2:
+						  Scanner key = new Scanner(System.in);
+					      String fpath = "./main/";
+					      System.out.println("Enter the name of the desired directory: ");
+					      fpath = fpath + key.next();
+					      //Creating a File object
+					      
+						
+						try {
+							
+						      File myFileObj = new File(fpath);
+						      if (myFileObj.createNewFile()) {
+						        System.out.println("File created: " + myFileObj.getName());
+						      } else {
+						        System.out.println("File already exists.");
+						      }
+						    } catch (IOException e) {
+						      System.out.println("An error occurred.");
+						      e.printStackTrace();
+						    }
 						break;
 					}
 					break;
