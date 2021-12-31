@@ -143,6 +143,11 @@ public class FileHandling {
 					case 4:
 						choice = 0;
 						break;
+					case 5:
+
+						System.out.println("program terminated successfully");
+						System.exit(0);
+						break;
 					default:
 						System.out.println("Invalid input: input correct value and retry");
 						break;
